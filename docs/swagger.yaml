@@ -1,0 +1,185 @@
+swagger: '2.0'
+info:
+  contact: {}
+  title: Localhost TS in Node Express
+  version: 1.0.0
+host: localhost:3000
+basePath: /
+schemes:
+  - http
+paths:
+  /todos:
+    get:
+      produces:
+        - application/json
+      parameters: []
+      responses:
+        '200':
+          description: Success
+          headers:
+            Connection:
+              type: string
+            Content-Length:
+              type: string
+            Date:
+              type: string
+            ETag:
+              type: string
+            Keep-Alive:
+              type: string
+            X-Powered-By:
+              type: string
+          schema:
+            properties:
+              data:
+                example:
+                  - id: 1b76900c-4722-49a8-a061-fd3eea8bfa25
+                    text: Finish the course!
+                  - id: af159cf0-5e1a-4e7f-b008-abb6a2d9d6a1
+                    text: Buy a battery!
+                items:
+                  properties:
+                    id:
+                      example: 1b76900c-4722-49a8-a061-fd3eea8bfa25
+                      type: string
+                    text:
+                      example: Finish the course!
+                      type: string
+                  type: object
+                type: array
+            type: object
+      description: List Todo
+      operationId: listTodo
+      summary: List Todo
+    post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            properties:
+              text:
+                example: Buy a battery!
+                type: string
+            type: object
+      responses:
+        '201':
+          description: Success
+          headers:
+            Connection:
+              type: string
+            Content-Length:
+              type: string
+            Date:
+              type: string
+            ETag:
+              type: string
+            Keep-Alive:
+              type: string
+            X-Powered-By:
+              type: string
+          schema:
+            properties:
+              data:
+                properties:
+                  id:
+                    example: af159cf0-5e1a-4e7f-b008-abb6a2d9d6a1
+                    type: string
+                  text:
+                    example: Buy a battery!
+                    type: string
+                type: object
+              message:
+                example: Todo created successfully!
+                type: string
+            type: object
+      description: Create a Todo
+      operationId: createATodo
+      summary: Create a Todo
+  /todos/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        type: string
+    delete:
+      produces:
+        - application/json
+      parameters: []
+      responses:
+        '200':
+          description: Success
+          headers:
+            Connection:
+              type: string
+            Content-Length:
+              type: string
+            Date:
+              type: string
+            ETag:
+              type: string
+            Keep-Alive:
+              type: string
+            X-Powered-By:
+              type: string
+          schema:
+            properties:
+              message:
+                example: Todo deleted successfully!
+                type: string
+            type: object
+      description: Delete a Todo
+      operationId: deleteATodo
+      summary: Delete a Todo
+    patch:
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            properties:
+              text:
+                example: Finish the courses by this week!
+                type: string
+            type: object
+      responses:
+        '200':
+          description: Success
+          headers:
+            Connection:
+              type: string
+            Content-Length:
+              type: string
+            Date:
+              type: string
+            ETag:
+              type: string
+            Keep-Alive:
+              type: string
+            X-Powered-By:
+              type: string
+          schema:
+            properties:
+              data:
+                properties:
+                  id:
+                    example: 1b76900c-4722-49a8-a061-fd3eea8bfa25
+                    type: string
+                  text:
+                    example: Finish the courses by this week!
+                    type: string
+                type: object
+              message:
+                example: Todo updated successfully!
+                type: string
+            type: object
+      description: Update a Todo
+      operationId: updateATodo
+      summary: Update a Todo
+tags: []

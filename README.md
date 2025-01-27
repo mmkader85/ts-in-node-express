@@ -1,8 +1,8 @@
-# ts-in-node-express
-A simple backend API in node.js using express framework. CRUD operation using in-memory storage.
+# Typescript in Node.js using express framework
+A simple backend API in Node.js using express framework and written in Typescript. CRUD operation using in-memory storage.
 
 ## Requirements
-- [Nodejs](https://nodejs.org/en/download)
+- [Node.js](https://nodejs.org/en/download)
 
 ## Run the application
 ```shell
